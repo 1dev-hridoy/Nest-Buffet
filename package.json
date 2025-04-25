@@ -1,0 +1,19 @@
+{
+  "name": "hridoyxqc",
+  "version": "1.0.0",
+  "description": "Simple and Easy-to-Use API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "figlet": "^1.8.1",
+    "gradient-string": "^3.0.0",
+    "winston": "^3.8.2"
+  },
+  "author": "1dev-hridoy",
+  "license": "MIT"
+}
