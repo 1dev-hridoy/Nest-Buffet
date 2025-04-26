@@ -7,144 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-      body {
-          font-family: 'Inter', sans-serif;
-          background-color: #0f172a;
-          color: #e2e8f0;
-      }
-      .sidebar {
-          width: 260px;
-          transition: all 0.3s;
-          background-color: #1e293b;
-      }
-      .main-content {
-          transition: all 0.3s;
-      }
-      .api-card {
-          transition: all 0.2s;
-          background-color: #1e293b;
-      }
-      .api-card:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-      }
-      .modal {
-          transition: all 0.3s;
-      }
-      .modal-content {
-          transition: all 0.3s;
-          transform: scale(0.95);
-          opacity: 0;
-          background-color: #1e293b;
-          max-height: 90vh; /* Limit modal height to 90% of viewport height */
-          display: flex;
-          flex-direction: column;
-      }
-      .modal.active .modal-content {
-          transform: scale(1);
-          opacity: 1;
-      }
-      .modal-body {
-          flex: 1;
-          overflow-y: auto; /* Enable vertical scrolling */
-          padding: 1.5rem; /* Match padding with header/footer */
-      }
-      ::-webkit-scrollbar {
-          width: 8px;
-          height: 8px;
-      }
-      ::-webkit-scrollbar-track {
-          background: #1e293b;
-      }
-      ::-webkit-scrollbar-thumb {
-          background: #475569;
-          border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-          background: #64748b;
-      }
-      @media (max-width: 768px) {
-          .sidebar {
-              position: fixed;
-              left: -100%;
-              top: 0;
-              bottom: 0;
-              z-index: 50;
-              transition: left 0.3s ease;
-              width: 85%;
-              max-width: 300px;
-          }
-          .sidebar.active {
-              left: 0;
-          }
-          .overlay {
-              position: fixed;
-              inset: 0;
-              background-color: rgba(0, 0, 0, 0.5);
-              z-index: 40;
-              opacity: 0;
-              pointer-events: none;
-              transition: opacity 0.3s ease;
-          }
-          .overlay.active {
-              opacity: 1;
-              pointer-events: auto;
-          }
-      }
-      .modal-close-btn {
-          position: absolute;
-          top: -15px;
-          right: -15px;
-          background: #7c3aed;
-          color: white;
-          width: 36px;
-          height: 36px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          z-index: 60;
-      }
-      .status-indicator {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          display: inline-block;
-          margin-right: 6px;
-      }
-      .status-online {
-          background-color: #10b981;
-          box-shadow: 0 0 8px #10b981;
-      }
-      .tab-content {
-          display: none;
-      }
-      .tab-content.active {
-          display: block;
-      }
-      .input-error {
-          border-color: #f87171 !important;
-      }
-      .error-message {
-          color: #f87171;
-          font-size: 0.75rem;
-          margin-top: 0.25rem;
-      }
-      .body-tab-button {
-          padding: 0.5rem 1rem;
-          border-radius: 0.375rem;
-          background-color: #374151;
-          color: #d1d5db;
-          margin-right: 0.5rem;
-      }
-      .body-tab-button.active {
-          background-color: #7c3aed;
-          color: #ffffff;
-      }
-  </style>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="text-gray-200">
   <div class="overlay" id="overlay"></div>
@@ -170,13 +33,13 @@
                       <p class="text-xs uppercase text-gray-400 font-semibold mb-2">Tools</p>
                       <ul class="space-y-1">
                           <li>
-                              <a href="#" class="flex items-center p-2 rounded-md hover:bg-gray-700/50">
+                              <a href="#" class="flex items-center p-2 rounded-md hover:bg-gray-700/50" id="settings-link">
                                   <i class="fa-solid fa-gear text-sm mr-2"></i>
                                   Settings
                               </a>
                           </li>
                           <li>
-                              <a href="#" class="flex items-center p-2 rounded-md hover:bg-gray-700/50">
+                              <a href="#" class="flex items-center p-2 rounded-md hover:bg-gray-700/50" id="help-support-link">
                                   <i class="fa-solid fa-circle-question text-sm mr-2"></i>
                                   Help & Support
                               </a>
@@ -215,9 +78,12 @@
                       <input type="text" placeholder="Search APIs..." class="w-48 md:w-64 pl-10 pr-4 py-2 rounded-md bg-gray-700 border border-gray-600 text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                       <i class="fa-solid fa-search text-gray-400 absolute left-3 top-2.5"></i>
                   </div>
-                  <button class="p-2 rounded-md hover:bg-gray-700">
-                      <i class="fa-solid fa-bell text-gray-300"></i>
-                  </button>
+                  <div class="relative">
+                      <button class="p-2 rounded-md hover:bg-gray-700" id="notification-btn">
+                          <i class="fa-solid fa-bell text-gray-300"></i>
+                      </button>
+                      <div class="notification-dropdown" id="notification-dropdown"></div>
+                  </div>
               </div>
           </header>
 
@@ -349,6 +215,29 @@
                   </div>
                   <div id="api-lists"></div>
               </div>
+
+              <!-- Help & Support Section -->
+              <div class="mb-8 hidden" id="help-support-section">
+                  <div class="flex items-center justify-between mb-4">
+                      <h3 class="text-lg font-semibold text-white">Help & Support</h3>
+                      <button id="back-to-dashboard" class="text-sm text-purple-400 hover:text-purple-300 flex items-center">
+                          Back to Dashboard
+                          <i class="fa-solid fa-chevron-left ml-1 text-xs"></i>
+                      </button>
+                  </div>
+                  <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-sm">
+                      <div class="flex justify-center mb-4">
+                          <img id="support-image" class="support-image rounded-lg" src="" alt="Support Image">
+                      </div>
+                      <div class="text-center">
+                          <p class="text-sm text-gray-400 mb-2">Status: <span id="support-status" class="text-green-400"></span></p>
+                          <p class="text-sm text-gray-400 mb-2">Operator: <span id="support-operator" class="text-white"></span></p>
+                          <h4 class="text-xl font-semibold text-white mb-2" id="support-name"></h4>
+                          <p class="text-sm text-gray-400 mb-4" id="support-description"></p>
+                          <div class="flex justify-center gap-3" id="support-links"></div>
+                      </div>
+                  </div>
+              </div>
           </div>
       </div>
   </div>
@@ -361,12 +250,7 @@
           </button>
           <!-- Modal Header -->
           <div class="p-6 border-b border-gray-700">
-              <div class="flex items-center justify-between">
-                  <h3 class="text-lg font-semibold text-white" id="modal-title">Test API</h3>
-                  <button id="close-modal" class="text-gray-400 hover:text-gray-200">
-                      <i class="fa-solid fa-xmark text-lg"></i>
-                  </button>
-              </div>
+              <h3 class="text-lg font-semibold text-white" id="modal-title">Test API</h3>
           </div>
           <!-- Modal Body (Scrollable) -->
           <div class="modal-body">
@@ -444,576 +328,6 @@
       </div>
   </div>
 
-  <script>
-      // Fetch API metadata from the server
-      let apiData = { categories: {}, stats: {} };
-      let serverStartTime = new Date();
-      let averageResponseTime = 0;
-      let responseTimeCount = 0;
-      let currentApiParams = [];
-
-      async function fetchApiData() {
-          try {
-              const response = await fetch('/api/metadata');
-              apiData = await response.json();
-
-              // Update dashboard stats
-              document.getElementById('total-apis').textContent = apiData.stats.totalApis;
-              document.getElementById('get-apis').textContent = apiData.stats.getApis;
-              document.getElementById('post-apis').textContent = apiData.stats.postApis;
-
-              // Update API calls
-              updateApiCalls();
-
-              // Populate sidebar categories
-              const sidebarCategories = document.getElementById('sidebar-categories');
-              sidebarCategories.innerHTML = '';
-              Object.keys(apiData.categories).forEach(category => {
-                  const li = document.createElement('li');
-                  li.innerHTML = `
-                      <a href="#" class="category-link flex items-center p-2 rounded-md hover:bg-gray-700/50" data-category="${category}">
-                          <i class="fa-solid fa-folder text-sm mr-2"></i>
-                          ${category.charAt(0).toUpperCase() + category.slice(1)}
-                      </a>
-                  `;
-                  sidebarCategories.appendChild(li);
-              });
-
-              // Populate category cards in API Documentation
-              const categoryCards = document.getElementById('category-cards');
-              categoryCards.innerHTML = '';
-              Object.keys(apiData.categories).forEach(category => {
-                  const categoryApis = apiData.categories[category];
-                  const getCount = categoryApis.filter(api => api.method === 'GET').length;
-                  const postCount = categoryApis.filter(api => api.method === 'POST').length;
-                  const putCount = categoryApis.filter(api => api.method === 'PUT').length;
-
-                  const card = document.createElement('div');
-                  card.className = 'bg-gray-800 p-5 rounded-lg border border-gray-700 shadow-sm hover:shadow-md transition-all cursor-pointer category-card';
-                  card.dataset.category = category;
-                  card.innerHTML = `
-                      <div class="flex items-center mb-3">
-                          <div class="p-3 rounded-md bg-purple-900/30 text-purple-400">
-                              <i class="fa-solid fa-folder text-lg"></i>
-                          </div>
-                          <h4 class="ml-3 font-semibold text-white">${category.charAt(0).toUpperCase() + category.slice(1)}</h4>
-                      </div>
-                      <p class="text-sm text-gray-400 mb-3">${category} APIs</p>
-                      <div class="flex items-center gap-2">
-                          ${getCount > 0 ? `<span class="bg-blue-900/30 text-blue-400 px-2 py-0.5 rounded text-xs font-medium">${getCount} GET</span>` : ''}
-                          ${postCount > 0 ? `<span class="bg-green-900/30 text-green-400 px-2 py-0.5 rounded text-xs font-medium">${postCount} POST</span>` : ''}
-                          ${putCount > 0 ? `<span class="bg-yellow-900/30 text-yellow-400 px-2 py-0.5 rounded text-xs font-medium">${putCount} PUT</span>` : ''}
-                      </div>
-                  `;
-                  categoryCards.appendChild(card);
-              });
-
-              // Populate API lists
-              const apiLists = document.getElementById('api-lists');
-              apiLists.innerHTML = '';
-              Object.keys(apiData.categories).forEach(category => {
-                  const categoryApis = apiData.categories[category];
-                  const listDiv = document.createElement('div');
-                  listDiv.className = 'api-list hidden';
-                  listDiv.id = `${category}-apis`;
-                  const grid = document.createElement('div');
-                  grid.className = 'grid grid-cols-1 md:grid-cols-2 gap-4';
-
-                  categoryApis.forEach(api => {
-                      const card = document.createElement('div');
-                      card.className = 'p-4 rounded-lg border border-gray-700 shadow-sm hover:shadow-md transition-all cursor-pointer api-card';
-                      card.dataset.api = api.name.toLowerCase().replace(/\s+/g, '-');
-                      card.dataset.endpoint = api.endpoint;
-                      card.dataset.method = api.method;
-                      card.dataset.category = category;
-                      card.innerHTML = `
-                          <div class="flex items-center justify-between mb-3">
-                              <h4 class="font-semibold text-white">${api.name}</h4>
-                              <span class="px-2 py-1 ${api.method === 'GET' ? 'bg-blue-900/30 text-blue-400' : 'bg-green-900/30 text-green-400'} text-xs font-medium rounded">${api.method}</span>
-                          </div>
-                          <p class="text-sm text-gray-400 mb-3">${api.name} API</p>
-                          <div class="text-xs text-gray-400 font-mono bg-gray-700/50 p-2 rounded mb-3">${api.endpoint}</div>
-                          <div class="flex items-center justify-between">
-                              <div class="flex items-center text-sm text-gray-400">
-                                  <i class="fa-solid fa-clock mr-1 text-xs"></i>
-                                  ${Math.floor(Math.random() * 100 + 100)}ms avg
-                              </div>
-                              <button class="text-purple-400 hover:text-purple-300 text-sm font-medium">Test API</button>
-                          </div>
-                      `;
-                      grid.appendChild(card);
-                  });
-
-                  listDiv.appendChild(grid);
-                  apiLists.appendChild(listDiv);
-              });
-
-              // Reattach event listeners for category cards
-              attachCategoryEventListeners();
-          } catch (error) {
-              console.error('Error fetching API data:', error);
-          }
-      }
-
-      // Update API calls dynamically
-      function updateApiCalls() {
-          document.getElementById('api-calls-today').textContent = apiData.stats.apiCalls.totalCallsToday.toLocaleString();
-          document.getElementById('peak-calls').textContent = apiData.stats.apiCalls.peakCallsPerMinute;
-          const change = apiData.stats.apiCalls.totalCallsToday > 0 ? Math.round((apiData.stats.apiCalls.totalCallsToday - 1000) / 1000 * 100) : 0;
-          document.getElementById('api-calls-change').textContent = `${change >= 0 ? '+' : ''}${change}% from yesterday`;
-      }
-
-      // Simulate server performance
-      function updateServerPerformance() {
-          const now = new Date();
-          const elapsedSeconds = (now - serverStartTime) / 1000;
-
-          const responseTime = Math.floor(Math.random() * 100 + 100);
-          averageResponseTime = (averageResponseTime * responseTimeCount + responseTime) / (responseTimeCount + 1);
-          responseTimeCount++;
-          const change = Math.round(responseTime - averageResponseTime);
-
-          document.getElementById('response-time').textContent = `${responseTime}ms`;
-          document.getElementById('response-time-change').textContent = `${change >= 0 ? '+' : ''}${change}ms from average`;
-
-          const cpuUsage = Math.floor(Math.random() * 20 + 20);
-          document.getElementById('cpu-usage').textContent = `${cpuUsage}%`;
-
-          const memoryUsage = (Math.random() * 2 + 2).toFixed(1);
-          document.getElementById('memory-usage').textContent = `${memoryUsage}GB/8GB`;
-      }
-
-      // Update clock, uptime, and performance
-      function updateClockAndStats() {
-          const now = new Date();
-          const timeString = now.toLocaleTimeString();
-          document.getElementById('current-time').textContent = timeString;
-
-          document.getElementById('last-updated').textContent = 'Just now';
-
-          const elapsedSeconds = (now - serverStartTime) / 1000;
-          const uptimePercentage = Math.min(100, 99.9 + Math.sin(elapsedSeconds / 10000) * 0.1).toFixed(2);
-          document.getElementById('server-uptime').textContent = `${uptimePercentage}%`;
-
-          updateServerPerformance();
-
-          fetch('/api/metadata').then(response => response.json()).then(data => {
-              apiData.stats = data.stats;
-              updateApiCalls();
-          });
-      }
-
-      // Mobile sidebar toggle
-      document.getElementById('open-sidebar').addEventListener('click', () => {
-          document.getElementById('sidebar').classList.add('active');
-          document.getElementById('overlay').classList.add('active');
-      });
-
-      document.getElementById('close-sidebar').addEventListener('click', () => {
-          document.getElementById('sidebar').classList.remove('active');
-          document.getElementById('overlay').classList.remove('active');
-      });
-
-      document.getElementById('overlay').addEventListener('click', () => {
-          document.getElementById('sidebar').classList.remove('active');
-          document.getElementById('overlay').classList.remove('active');
-      });
-
-      // Show API list when category is clicked
-      function attachCategoryEventListeners() {
-          document.querySelectorAll('.category-link, .category-card').forEach(item => {
-              item.addEventListener('click', event => {
-                  event.preventDefault();
-                  const category = item.dataset.category;
-                  document.getElementById('dashboard-overview').classList.add('hidden');
-                  document.getElementById('api-categories').classList.add('hidden');
-                  document.getElementById('api-list-section').classList.remove('hidden');
-
-                  document.querySelectorAll('.api-list').forEach(list => {
-                      list.classList.add('hidden');
-                  });
-
-                  document.getElementById(`${category}-apis`).classList.remove('hidden');
-
-                  document.getElementById('category-title').textContent = category.charAt(0).toUpperCase() + category.slice(1);
-
-                  document.querySelectorAll('.category-link').forEach(link => {
-                      link.classList.remove('bg-purple-900/30', 'text-purple-400');
-                      link.classList.add('hover:bg-gray-700/50');
-                  });
-                  document.querySelector(`.category-link[data-category="${category}"]`).classList.add('bg-purple-900/30', 'text-purple-400');
-                  document.querySelector(`.category-link[data-category="${category}"]`).classList.remove('hover:bg-gray-700/50');
-
-                  document.getElementById('sidebar').classList.remove('active');
-                  document.getElementById('overlay').classList.remove('active');
-              });
-          });
-      }
-
-      // Back to categories
-      document.getElementById('back-to-categories').addEventListener('click', () => {
-          document.getElementById('dashboard-overview').classList.remove('hidden');
-          document.getElementById('api-categories').classList.remove('hidden');
-          document.getElementById('api-list-section').classList.add('hidden');
-      });
-
-      // Tab switching in modal
-      document.querySelectorAll('.tab-button').forEach(button => {
-          button.addEventListener('click', () => {
-              document.querySelectorAll('.tab-button').forEach(btn => {
-                  btn.classList.remove('bg-purple-600', 'text-white');
-                  btn.classList.add('bg-gray-700', 'text-gray-300', 'hover:bg-gray-600');
-              });
-              button.classList.remove('bg-gray-700', 'text-gray-300', 'hover:bg-gray-600');
-              button.classList.add('bg-purple-600', 'text-white');
-
-              document.querySelectorAll('.tab-content').forEach(content => {
-                  content.classList.remove('active');
-              });
-              document.getElementById(`${button.dataset.tab}-tab`).classList.add('active');
-          });
-      });
-
-      // Body tab switching (Form Inputs vs Raw JSON)
-      document.querySelectorAll('.body-tab-button').forEach(button => {
-          button.addEventListener('click', () => {
-              document.querySelectorAll('.body-tab-button').forEach(btn => {
-                  btn.classList.remove('active');
-              });
-              button.classList.add('active');
-
-              document.querySelectorAll('.body-tab-content').forEach(content => {
-                  content.classList.remove('active');
-              });
-              document.getElementById(`body-${button.dataset.bodyTab}-container`).classList.add('active');
-
-              updateRequestBodyPreview();
-          });
-      });
-
-      // Show API test modal
-      document.addEventListener('click', event => {
-          const apiCard = event.target.closest('.api-card');
-          if (apiCard) {
-              const apiName = apiCard.dataset.api;
-              const endpoint = apiCard.dataset.endpoint;
-              const method = apiCard.dataset.method;
-              const category = apiCard.dataset.category;
-
-              // Find the API in apiData
-              const api = apiData.categories[category].find(api => api.name.toLowerCase().replace(/\s+/g, '-') === apiName);
-              currentApiParams = api.params || [];
-
-              const modal = document.getElementById('api-test-modal');
-
-              // Update modal content
-              document.getElementById('modal-title').textContent = `Test API: ${apiName.charAt(0).toUpperCase() + apiName.slice(1).replace('-', ' ')}`;
-              document.getElementById('modal-method').textContent = method;
-              document.getElementById('modal-method').className = `px-2 py-1 ${method === 'GET' ? 'bg-blue-900/30 text-blue-400' : 'bg-green-900/30 text-green-400'} text-xs font-medium rounded mr-2`;
-              document.getElementById('modal-endpoint').textContent = endpoint;
-              document.getElementById('modal-description').textContent = `${apiName} API`;
-              document.getElementById('modal-response').innerHTML = `<pre>{}</pre>`;
-              document.getElementById('modal-response-status').textContent = 'Status: Not Sent';
-
-              // Populate params or body inputs
-              if (method === 'GET') {
-                  const paramsContainer = document.getElementById('params-container');
-                  paramsContainer.innerHTML = '';
-                  currentApiParams.forEach(param => {
-                      const div = document.createElement('div');
-                      div.className = 'mb-4';
-                      div.innerHTML = `
-                          <label class="block text-sm font-medium text-gray-300 mb-1">${param.name} (${param.type})${param.required ? ' <span class="text-red-400">*</span>' : ''}</label>
-                          <input type="text" name="${param.name}" placeholder="${param.description}" class="w-full p-2 border border-gray-600 rounded-md bg-gray-800 text-gray-200" ${param.required ? 'required' : ''}>
-                          <p class="error-message hidden">This field is required</p>
-                      `;
-                      paramsContainer.appendChild(div);
-                  });
-                  document.getElementById('body-inputs').innerHTML = '<p class="text-sm text-gray-400">GET requests do not require a request body.</p>';
-                  document.getElementById('body-raw-container').classList.add('hidden');
-              } else if (method === 'POST') {
-                  const bodyInputs = document.getElementById('body-inputs');
-                  bodyInputs.innerHTML = '';
-                  currentApiParams.forEach(param => {
-                      const div = document.createElement('div');
-                      div.className = 'mb-4';
-                      div.innerHTML = `
-                          <label class="block text-sm font-medium text-gray-300 mb-1">${param.name} (${param.type})${param.required ? ' <span class="text-red-400">*</span>' : ''}</label>
-                          <input type="text" name="${param.name}" placeholder="${param.description}" class="w-full p-2 border border-gray-600 rounded-md bg-gray-800 text-gray-200" ${param.required ? 'required' : ''}>
-                          <p class="error-message hidden">This field is required</p>
-                      `;
-                      bodyInputs.appendChild(div);
-                  });
-                  document.getElementById('body-raw-container').classList.remove('hidden');
-                  document.getElementById('params-container').innerHTML = '<p class="text-sm text-gray-400">POST requests use the request body for parameters.</p>';
-              }
-
-              // Update request body preview
-              updateRequestBodyPreview();
-
-              // Show modal
-              modal.classList.remove('hidden');
-              setTimeout(() => {
-                  modal.classList.add('active');
-              }, 10);
-          }
-      });
-
-      // Update request body preview
-      function updateRequestBodyPreview() {
-          const method = document.getElementById('modal-method').textContent;
-          let requestBody = {};
-
-          if (method === 'POST') {
-              const activeBodyTab = document.querySelector('.body-tab-button.active').dataset.bodyTab;
-              if (activeBodyTab === 'form') {
-                  currentApiParams.forEach(param => {
-                      const input = document.querySelector(`#body-inputs input[name="${param.name}"]`);
-                      if (input && input.value) {
-                          requestBody[param.name] = input.value;
-                      }
-                  });
-              } else if (activeBodyTab === 'raw') {
-                  const rawInput = document.getElementById('raw-json-input').value;
-                  try {
-                      requestBody = JSON.parse(rawInput || '{}');
-                      document.getElementById('raw-json-input').classList.remove('input-error');
-                      document.querySelector('#body-raw-container .error-message').classList.add('hidden');
-                  } catch (e) {
-                      requestBody = {};
-                      document.getElementById('raw-json-input').classList.add('input-error');
-                      document.querySelector('#body-raw-container .error-message').classList.remove('hidden');
-                  }
-              }
-          }
-
-          document.getElementById('modal-request-body').innerHTML = `<pre>${JSON.stringify(requestBody, null, 2)}</pre>`;
-      }
-
-      // Update request body preview on input change
-      document.getElementById('body-inputs').addEventListener('input', updateRequestBodyPreview);
-      document.getElementById('raw-json-input').addEventListener('input', updateRequestBodyPreview);
-
-      // Reset modal
-      document.getElementById('reset-request').addEventListener('click', () => {
-          document.querySelectorAll('#params-container input, #body-inputs input').forEach(input => {
-              input.value = '';
-              input.classList.remove('input-error');
-              input.nextElementSibling.classList.add('hidden');
-          });
-          document.getElementById('raw-json-input').value = '';
-          document.getElementById('raw-json-input').classList.remove('input-error');
-          document.querySelector('#body-raw-container .error-message').classList.add('hidden');
-          document.querySelector('input[name="authorization"]').value = '';
-          document.querySelector('input[name="x-user-role"]').value = 'user';
-          document.getElementById('modal-response').innerHTML = `<pre>{}</pre>`;
-          document.getElementById('modal-response-status').textContent = 'Status: Not Sent';
-          updateRequestBodyPreview();
-      });
-
-      // Send Request
-      document.getElementById('send-request').addEventListener('click', async () => {
-          const method = document.getElementById('modal-method').textContent;
-          const endpoint = document.getElementById('modal-endpoint').textContent;
-          const headers = {
-              'Content-Type': 'application/json',
-              'Authorization': document.querySelector('input[name="authorization"]').value,
-              'x-user-role': document.querySelector('input[name="x-user-role"]').value || 'user',
-          };
-
-          let url = endpoint;
-          let body = null;
-          let isValid = true;
-
-          if (method === 'GET') {
-              const params = {};
-              currentApiParams.forEach(param => {
-                  const input = document.querySelector(`#params-container input[name="${param.name}"]`);
-                  if (param.required && (!input.value || input.value.trim() === '')) {
-                      input.classList.add('input-error');
-                      input.nextElementSibling.classList.remove('hidden');
-                      isValid = false;
-                  } else {
-                      input.classList.remove('input-error');
-                      input.nextElementSibling.classList.add('hidden');
-                      if (input && input.value) {
-                          params[param.name] = input.value;
-                      }
-                  }
-              });
-              if (!isValid) return;
-              const queryString = new URLSearchParams(params).toString();
-              if (queryString) {
-                  url = `${endpoint}?${queryString}`;
-              }
-          } else if (method === 'POST') {
-              const activeBodyTab = document.querySelector('.body-tab-button.active').dataset.bodyTab;
-              let requestBody = {};
-
-              if (activeBodyTab === 'form') {
-                  currentApiParams.forEach(param => {
-                      const input = document.querySelector(`#body-inputs input[name="${param.name}"]`);
-                      if (param.required && (!input.value || input.value.trim() === '')) {
-                          input.classList.add('input-error');
-                          input.nextElementSibling.classList.remove('hidden');
-                          isValid = false;
-                      } else {
-                          input.classList.remove('input-error');
-                          input.nextElementSibling.classList.add('hidden');
-                          if (input && input.value) {
-                              requestBody[param.name] = input.value;
-                          }
-                      }
-                  });
-              } else if (activeBodyTab === 'raw') {
-                  const rawInput = document.getElementById('raw-json-input').value;
-                  try {
-                      requestBody = JSON.parse(rawInput || '{}');
-                      document.getElementById('raw-json-input').classList.remove('input-error');
-                      document.querySelector('#body-raw-container .error-message').classList.add('hidden');
-                  } catch (e) {
-                      document.getElementById('raw-json-input').classList.add('input-error');
-                      document.querySelector('#body-raw-container .error-message').classList.remove('hidden');
-                      isValid = false;
-                  }
-              }
-
-              if (!isValid) return;
-              body = JSON.stringify(requestBody);
-          }
-
-          try {
-              const startTime = performance.now();
-              const response = await fetch(url, {
-                  method: method,
-                  headers: headers,
-                  body: body,
-              });
-              const endTime = performance.now();
-              const responseTime = Math.round(endTime - startTime);
-
-              const data = await response.json();
-              document.getElementById('modal-response').innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-              document.getElementById('modal-response-status').textContent = `Status: ${response.status} ${response.statusText}`;
-
-              averageResponseTime = (averageResponseTime * responseTimeCount + responseTime) / (responseTimeCount + 1);
-              responseTimeCount++;
-              const change = Math.round(responseTime - averageResponseTime);
-              document.getElementById('response-time').textContent = `${responseTime}ms`;
-              document.getElementById('response-time-change').textContent = `${change >= 0 ? '+' : ''}${change}ms from average`;
-          } catch (error) {
-              document.getElementById('modal-response').innerHTML = `<pre>{ "error": "${error.message}" }</pre>`;
-              document.getElementById('modal-response-status').textContent = 'Status: Error';
-          }
-      });
-
-      // Close modal
-      function closeModal() {
-          const modal = document.getElementById('api-test-modal');
-          modal.classList.remove('active');
-          setTimeout(() => {
-              modal.classList.add('hidden');
-          }, 300);
-      }
-
-      document.getElementById('close-modal').addEventListener('click', closeModal);
-      document.getElementById('close-modal-btn').addEventListener('click', closeModal);
-      document.getElementById('api-test-modal').addEventListener('click', event => {
-          if (event.target === document.getElementById('api-test-modal')) {
-              closeModal();
-          }
-      });
-
-      // Initial fetch and periodic updates
-      fetchApiData();
-      updateClockAndStats();
-      setInterval(updateClockAndStats, 1000);
-
-// Filter and sort APIs
-document.getElementById('method-filter').addEventListener('change', filterApis);
-document.getElementById('sort-filter').addEventListener('change', filterApis);
-
-function filterApis() {
-    const methodFilter = document.getElementById('method-filter').value;
-    const sortFilter = document.getElementById('sort-filter').value;
-    const activeCategoryElement = document.querySelector('.api-list:not(.hidden)');
-    
-    // If no active category is found, exit early
-    if (!activeCategoryElement) {
-        console.warn('No active category found for filtering APIs.');
-        return;
-    }
-
-    const activeCategory = activeCategoryElement.id.replace('-apis', '');
-    const categoryApis = apiData.categories[activeCategory];
-
-    // If category APIs are not found, exit early
-    if (!categoryApis || categoryApis.length === 0) {
-        console.warn(`No APIs found for category: ${activeCategory}`);
-        const listDiv = document.getElementById(`${activeCategory}-apis`);
-        listDiv.innerHTML = '<p class="text-sm text-gray-400">No APIs available.</p>';
-        return;
-    }
-
-    // Clone the APIs array to avoid mutating the original
-    let filteredApis = [...categoryApis];
-
-    // Apply method filter
-    if (methodFilter !== 'All Methods') {
-        filteredApis = filteredApis.filter(api => api.method === methodFilter);
-    }
-
-    // Apply sorting
-    if (sortFilter === 'Sort by Name') {
-        filteredApis.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortFilter === 'Sort by Method') {
-        filteredApis.sort((a, b) => a.method.localeCompare(b.method));
-    }
-
-    // Update the API list
-    const listDiv = document.getElementById(`${activeCategory}-apis`);
-    listDiv.innerHTML = ''; // Clear the existing list
-
-    const grid = document.createElement('div');
-    grid.className = 'grid grid-cols-1 md:grid-cols-2 gap-4';
-
-    if (filteredApis.length === 0) {
-        grid.innerHTML = '<p class="text-sm text-gray-400">No APIs match the selected filters.</p>';
-    } else {
-        filteredApis.forEach(api => {
-            const card = document.createElement('div');
-            card.className = 'p-4 rounded-lg border border-gray-700 shadow-sm hover:shadow-md transition-all cursor-pointer api-card';
-            card.dataset.api = api.name.toLowerCase().replace(/\s+/g, '-');
-            card.dataset.endpoint = api.endpoint;
-            card.dataset.method = api.method;
-            card.dataset.category = activeCategory;
-
-            // Use a static or precomputed response time for consistency
-            const responseTime = api.responseTime || Math.floor(Math.random() * 100 + 100);
-
-            card.innerHTML = `
-                <div class="flex items-center justify-between mb-3">
-                    <h4 class="font-semibold text-white">${api.name}</h4>
-                    <span class="px-2 py-1 ${
-                        api.method === 'GET' ? 'bg-blue-900/30 text-blue-400' : 'bg-green-900/30 text-green-400'
-                    } text-xs font-medium rounded">${api.method}</span>
-                </div>
-                <p class="text-sm text-gray-400 mb-3">${api.name} API</p>
-                <div class="text-xs text-gray-400 font-mono bg-gray-700/50 p-2 rounded mb-3">${api.endpoint}</div>
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center text-sm text-gray-400">
-                        <i class="fa-solid fa-clock mr-1 text-xs"></i>
-                        ${responseTime}ms avg
-                    </div>
-                    <button class="text-purple-400 hover:text-purple-300 text-sm font-medium">Test API</button>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
-    }
-
-    listDiv.appendChild(grid);
-}
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

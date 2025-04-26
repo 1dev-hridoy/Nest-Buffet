@@ -11,7 +11,7 @@ const figlet = require("figlet");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const settings = require("./settings.json");
+const settings = require("./public/server/settings.json");
 
 
 const apiCalls = {
