@@ -1080,3 +1080,171 @@
 {"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:13:27.639Z"}
 {"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:14:27.630Z"}
 {"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:15:27.639Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:16:27.650Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:17:27.635Z"}
+{"level":"info","message":"Loaded API: GET /api/name-background","timestamp":"2025-04-27T17:17:51.246Z"}
+{"level":"info","message":"Loaded API: POST /api/query","timestamp":"2025-04-27T17:17:51.249Z"}
+{"level":"info","message":"Loaded API: GET /api/github-card","timestamp":"2025-04-27T17:17:51.251Z"}
+{"level":"info","message":"Loaded API: GET /api/github-user-info","timestamp":"2025-04-27T17:17:51.252Z"}
+{"level":"info","message":"Loaded API: GET /api/hellos","timestamp":"2025-04-27T17:17:51.253Z"}
+{"level":"info","message":"Loaded API: GET /api/generate-meme","timestamp":"2025-04-27T17:17:51.255Z"}
+{"level":"info","message":"Loaded API: GET /api/meme-generator","timestamp":"2025-04-27T17:17:51.256Z"}
+{"level":"info","message":"Loaded API: GET /api/message-styler","timestamp":"2025-04-27T17:17:51.259Z"}
+{"level":"info","message":"Loaded API: GET /api/profile-card","timestamp":"2025-04-27T17:17:51.260Z"}
+{"level":"info","message":"Loaded API: GET /api/youtube-info","timestamp":"2025-04-27T17:17:51.278Z"}
+{"level":"info","message":"Loaded API: GET /api/welcome-card","timestamp":"2025-04-27T17:17:51.280Z"}
+{"level":"info","message":"Loaded API: GET /api/welcomev2","timestamp":"2025-04-27T17:17:51.282Z"}
+{"level":"info","message":"Loaded API: GET /api/youtube-video-search","timestamp":"2025-04-27T17:17:51.460Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-04-27T17:17:51.493Z"}
+{"level":"info","message":"API Name: hridoyXQC, Version: 1.0.0","timestamp":"2025-04-27T17:17:51.493Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:17:55.066Z"}
+{"level":"info","message":"GET /docs.html","timestamp":"2025-04-27T17:17:55.374Z"}
+{"level":"info","message":"GET /assets/css/styles.css","timestamp":"2025-04-27T17:17:55.395Z"}
+{"level":"info","message":"GET /assets/js/main.js","timestamp":"2025-04-27T17:17:55.398Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:17:55.493Z"}
+{"level":"info","message":"GET /server/settings.json","timestamp":"2025-04-27T17:17:55.502Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:17:55.571Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:17:56.573Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:17:57.571Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:17:58.586Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:17:59.585Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:00.573Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:01.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:02.587Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:03.585Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:04.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:05.578Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:06.573Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:07.580Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:08.578Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:09.582Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:10.576Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:11.586Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:12.582Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:13.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:14.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:15.571Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:16.572Z"}
+{"level":"info","message":"GET /api/message-styler?text=hi&style=slap&language=js","timestamp":"2025-04-27T17:18:17.550Z"}
+{"level":"info","message":"Validating request body: {}","timestamp":"2025-04-27T17:18:17.556Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:17.573Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:18.574Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:19.578Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:20.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:21.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:22.578Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:23.580Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:24.576Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:25.585Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:26.576Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:27.573Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:28.576Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:29.573Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:30.584Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:31.576Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:32.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:33.574Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:34.579Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:35.572Z"}
+{"level":"info","message":"GET /api/message-styler?text=hi&style=vaporwave&language=js","timestamp":"2025-04-27T17:18:35.942Z"}
+{"level":"info","message":"Validating request body: {}","timestamp":"2025-04-27T17:18:35.944Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:36.571Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:37.571Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:38.571Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:39.571Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:40.579Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:41.571Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:42.575Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:43.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:44.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:45.571Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:46.584Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:47.573Z"}
+{"level":"info","message":"GET /api/message-styler?text=hi&style=vaporwavex&language=js","timestamp":"2025-04-27T17:18:47.782Z"}
+{"level":"info","message":"Validating request body: {}","timestamp":"2025-04-27T17:18:47.783Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:48.570Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:49.578Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:50.585Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:51.574Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:52.578Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:53.572Z"}
+{"level":"info","message":"GET /api/message-styler?text=hi&style=spoiler&language=js","timestamp":"2025-04-27T17:18:54.542Z"}
+{"level":"info","message":"Validating request body: {}","timestamp":"2025-04-27T17:18:54.544Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:54.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:55.574Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:56.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:57.573Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:58.575Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:18:59.583Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:00.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:01.579Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:02.573Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:03.572Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:04.584Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:05.577Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:06.583Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:07.586Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:08.629Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:09.635Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:10.631Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:11.634Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:12.627Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:13.635Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:14.633Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:15.627Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:16.632Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:17.631Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:18.627Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:19.639Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:20.632Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:21.626Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:22.636Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:23.631Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:24.626Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:25.634Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:26.633Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:27.629Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:28.628Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:29.639Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:30.627Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:31.639Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:32.633Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:33.639Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:34.632Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:35.628Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:36.640Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:37.639Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:38.639Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:39.632Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:40.637Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:41.638Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:42.634Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:43.634Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:44.631Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:45.625Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:46.627Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:47.639Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:48.634Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:49.633Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:50.630Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:51.641Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:52.640Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:53.634Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:54.634Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:55.630Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:56.635Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:57.633Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:58.631Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:19:59.627Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:20:00.637Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:20:01.634Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:20:02.631Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:20:03.639Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:20:04.633Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:20:05.633Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:20:06.629Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:20:07.636Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:20:27.635Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:21:27.631Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:22:27.638Z"}
+{"level":"info","message":"GET /api/metadata","timestamp":"2025-04-27T17:23:27.637Z"}
